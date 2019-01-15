@@ -57,7 +57,7 @@
       <form action="http://www.example.com/cg/register" method="POST">
     
         <label id="titleBox" for="title">Title</label>
-        <input name="title" id="titleBox" type="text">
+        <input name="title" id="titleBox" type="text" list="titleList">
 
         <label id="fnBox" for="firstName">First Name*</label>
         <input name="Firstname" id="fnBox" type="text" required>
@@ -66,7 +66,7 @@
         <input name="lastName" id="lnBox" type="text" required>
 
         <label id="addBox" for="address">Address*</label>
-        <input id="addBox" name="Address" type="text" required>
+        <textarea name="address" id="addBox" ></textarea>
 
         <label id="groupBox" for="group">Company or University</label>
         <input id="groupBox" name="group" type="text" >
@@ -75,14 +75,35 @@
         <input id="mailBox" name="email" type="email" required>
 
         <label id="phoneBox" for="phonenumber">Phone Number*</label>
-        <input id="phoneBox" name="phonenumber" type="tel" placeholder="(nnn)  nnn-nnnn" required>
+        <input id="phoneBox" name="phonenumber" type="tel" placeholder="(nnn)  nnn-nnnn" required pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$">
 
         <label id="idBox" for="acgipid">ACGIP Membership Number</label>
-        <input id="idBox" type="text" placeholder="acgip-nnnnnn">
-    
+        <input id="idBox" type="text" placeholder="acgip-nnnnnn" pattern="^acgip\-\d{6}$">
+    <!-- Created a form with the basic stuff on entering information here so it has the label which is the information its asking for and has ways to check if the user has entered it incorrectly by the format we have set. -->
+        <datalist id="titleList">
+            <option value="Mr." />
+            <option value="Mrs." />
+            <option value="Ms." />
+            <option value="Prof." />
+            <option value="Dr." />
+            <option value="Assist. Prof." />
+            <option value="Assoc. Prof." />
+        </datalist>
 
+        <label for="regList">Registration Category</label>
+        <select name="registerType" id="regList">
+            <option value="member">ACGIP Member ($695)</option>
+            <option value="nonmember">Non-Member ($795)</option>
+            <option value="student">Student ($310)</option>
+            <option value="poster">Poster ($95)</option>
+            <option value="guest">Guest ($35)</option>
+        </select>
+
+        <p>
+            <input type="submit" value="Continue">
+        </p>
     </form>
-
+<!-- This is the end of the form but before it we have a datalist that gives options to choose from for the title as it is used from the control with the id titleBox using the list attribute. Also created a selection list for the category of registration which they can choose. -->
    </section>
    
    <aside>
