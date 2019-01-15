@@ -20,8 +20,8 @@ textarea:focus {
 }
 
 input#fnBox:focus:valid,
-input#inBox:focus:valid,
-input#addBox:focus:valid,
+input#lnBox:focus:valid,
+#addBox:focus:valid,
 input#mailBox:focus:valid,
 input#phoneBox:focus:valid,
 input#idBox:focus:valid {
@@ -29,8 +29,8 @@ input#idBox:focus:valid {
 }
 
 input#fnBox:focus:invalid,
-input#inBox:focus:invalid,
-input#addBox:focus:invalid,
+input#lnBox:focus:invalid,
+#addBox:focus:invalid,
 input#mailBox:focus:invalid,
 input#phoneBox:focus:invalid,
 input#idBox:focus:invalid {
